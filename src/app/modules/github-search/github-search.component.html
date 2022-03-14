@@ -1,0 +1,27 @@
+<h2 class="mb-4">Buscar repositórios</h2>
+<div class="my-2">
+  <div class="btnLanguages">
+    <button nbButton *ngFor="let language of languageProps$" value={{language.value}} (click)="updateRepositoryList(language.value)"><img src={{language.img}} alt=""></button>
+  </div>
+</div>
+<table class="table table-hover" [nbSpinner]="loadingSpinner">
+  <tbody>
+    <tr *ngFor="let language of languageList$ | async">
+      <th scope="row">
+        <img src={{language.owner.avatar_url}} alt="">
+      </th>
+      <!-- <td class="align-middle">{{language.ownerName}}</td> -->
+      <td class="align-middle">{{language.owner.login}}</td>
+      <td class="align-middle">{{language.name}}</td>
+      <td class="align-middle">{{language.language}}</td>
+      <td class="align-middle">
+        <div class="d-flex">
+          <button><nb-icon icon="save-outline" (click)="saveRepositoty(language)"></nb-icon></button>
+          <button>
+              <a href={{language.html_url}} target="_blank"><nb-icon icon="link-2-outline"></nb-icon></a>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

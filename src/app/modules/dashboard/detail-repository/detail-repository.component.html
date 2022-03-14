@@ -1,0 +1,20 @@
+<div *ngFor="let repository of repositoryDetail$ | async">
+    <div class="col-md-12 text-center">
+        <img src={{repository.owner.avatar_url}} alt="">
+        <h2 class="my-2">{{repository.owner.login}}</h2>
+        <span>{{repository.description}}</span>
+        <div class="my-2 d-flex justify-content-center">
+            <div class="icon d-flex flex-column">
+                <nb-icon icon="star-outline"></nb-icon>
+                {{repository.stargazers_count}}
+            </div>
+            <div class="icon d-flex flex-column">
+                <nb-icon icon="activity-outline"></nb-icon>
+                {{repository.forks_count}}
+            </div>
+            <a href={{repository.html_url}}>
+                <nb-icon icon="link-2-outline"></nb-icon>
+            </a>  
+        </div>
+    </div>
+</div>

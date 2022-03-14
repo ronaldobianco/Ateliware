@@ -1,0 +1,35 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    & img{
+        width: 100px;
+        position: relative;
+        margin-top: -75px;
+        border-radius: 50%;
+    }
+    & > div{
+        width: 300px;
+        & h3{
+            text-overflow: ellipsis;
+            overflow: hidden; 
+        }
+    }
+  }
+  nb-card-body{
+      min-height: 200px !important;
+  }
+::ng-deep .nb-theme-dark nb-card-body{
+    overflow: inherit !important;
+}
+button{
+    background: none !important;
+    border: none;
+    & nb-icon{
+        color: white;
+        &:hover{
+            color:#ef0044 !important;
+        }
+    }
+}

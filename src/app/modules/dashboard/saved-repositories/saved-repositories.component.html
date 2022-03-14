@@ -1,0 +1,22 @@
+<h2 class="mb-5">Repositórios salvos</h2>
+<div class="grid-container mt-5" [nbSpinner]="loadingSpinner">
+  <div *ngFor="let Repository of repositoryList$ | async">
+    <nb-card style="margin-bottom: 80px;">
+      <nb-card-body>
+        <div class="text-center">
+          <img src={{Repository.img_url}} alt="">
+          <h3>{{Repository.name}}</h3>
+          <span class="mb-2">{{Repository.language}}</span>
+          <div class="mt-2">
+            <button class="mr-2 p-0" (click)="openDetailRopository(Repository)">
+              <nb-icon icon="external-link-outline"></nb-icon>
+            </button>
+            <button class="p-0" (click)="deleteRepository(Repository)">
+              <nb-icon icon="trash-2-outline"></nb-icon>
+            </button>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

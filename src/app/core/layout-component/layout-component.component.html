@@ -1,0 +1,15 @@
+<nb-layout>
+
+    
+    <nb-sidebar state="compacted" tag="left" class="">
+        <img src="https://media.graphcms.com/gJsd71c5SGh1RyV8tIrV" (click)="toggleCompact()" class="pointer mb-5" alt="">
+        <nb-menu [items]="items">
+        </nb-menu>
+    </nb-sidebar>
+  
+    <nb-layout-column class="colored-column-warning">
+        <div class="GlassContainer m-2 p-4">
+            <router-outlet></router-outlet>
+        </div>
+    </nb-layout-column>
+  </nb-layout>

@@ -1,20 +1,33 @@
-<div *ngFor="let repository of repositoryDetail$ | async">
-    <div class="col-md-12 text-center">
-        <img src={{repository.owner.avatar_url}} alt="">
-        <h2 class="my-2">{{repository.owner.login}}</h2>
-        <span>{{repository.description}}</span>
-        <div class="my-2 d-flex justify-content-center">
-            <div class="icon d-flex flex-column">
-                <nb-icon icon="star-outline"></nb-icon>
-                {{repository.stargazers_count}}
+<div class="customIcon pointer" (click)="goBack()">
+    <nb-icon icon="arrow-ios-back-outline"></nb-icon>
+</div>
+<div [nbSpinner]="loadingSpinner">
+    <div *ngFor="let repository of repositoryDetail$ | async">
+        <div class="col-md-12 text-center">
+            <img src={{repository.owner.avatar_url}} alt="">
+            <div class="d-flex text-center justify-content-center">
+                <h2 class="my-2">{{repository.owner.login}}</h2>
+                <a href={{repository.html_url}} target="_blank" class="align-self-center m-2">
+                    <nb-icon icon="link-2-outline" class="customIcon"></nb-icon>
+                </a>
             </div>
-            <div class="icon d-flex flex-column">
-                <nb-icon icon="activity-outline"></nb-icon>
-                {{repository.forks_count}}
+            <span>{{repository.description}}</span>
+            <div class="my-3">
+                <span *ngFor="let topics of repository.topics" class="badge badge-secondary ml-2">{{topics}}</span></div>
             </div>
-            <a href={{repository.html_url}}>
-                <nb-icon icon="link-2-outline"></nb-icon>
-            </a>  
-        </div>
+            <div class="my-2 d-flex justify-content-center">
+                <div class="icon d-flex flex-column align-items-center m-2">
+                    <nb-icon icon="star-outline"></nb-icon>
+                    {{repository.stargazers_count}}
+                </div>
+                <div class="icon d-flex flex-column align-items-center m-2">
+                    <nb-icon icon="activity-outline"></nb-icon>
+                    {{repository.forks_count}}
+                </div>  
+                <div class="icon d-flex flex-column align-items-center m-2">
+                    <nb-icon icon="people-outline"></nb-icon>
+                    {{repository.network_count}}
+                </div>  
+            </div>  
     </div>
 </div>

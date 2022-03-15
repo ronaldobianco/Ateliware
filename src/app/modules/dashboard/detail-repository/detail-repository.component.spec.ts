@@ -15,7 +15,6 @@ describe('DetailRepositoryComponent', () => {
       imports:[HttpClientModule],
       providers: [{provide: ActivatedRoute, useValue: fakeActivatedRoute}],
       declarations: [ DetailRepositoryComponent ],
-      
     })
     .compileComponents();
   });

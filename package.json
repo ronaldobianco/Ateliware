@@ -3,12 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run config -- --environment=dev && ng serve",
+    "start": "node server.js",
     "prod": "npm run  --environment=prod && ng serve",
     "build": "npm run config -- --environment=prod && ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +33,9 @@
     "bootstrap": "^4.5.0",
     "dotenv": "^16.0.0",
     "eva-icons": "^1.1.2",
+    "express": "^4.17.3",
     "lodash": "^4.17.21",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

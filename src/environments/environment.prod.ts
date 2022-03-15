@@ -1,6 +1,6 @@
 import { Environment } from './environment.interface';
 
-const REPOSITORY_API = 'http://localhost:3100/';
+const REPOSITORY_API = 'https://ateliware-backend-test.herokuapp.com/';
 
 export const environment: Environment = {
   production: true,

@@ -10,17 +10,23 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', redirectTo: `/${homeRoute}`, pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => import('./modules/dashboard.module').then(m => m.DashboardModule) },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./modules/dashboard.module').then((m) => m.DashboardModule),
+      },
     ],
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    useHash: false,
-    preloadingStrategy: PreloadAllModules,
-    onSameUrlNavigation: 'reload',
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: false,
+      preloadingStrategy: PreloadAllModules,
+      onSameUrlNavigation: 'reload',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

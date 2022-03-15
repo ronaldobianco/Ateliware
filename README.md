@@ -6,7 +6,7 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
-## ## Descrição do projeto 
+## Descrição do projeto 
 
 <p align="justify">
  O Projeto foi desenvolvido para o teste de desenvolvedor de sofware Pleno para a Ateliware. 

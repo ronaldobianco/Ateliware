@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "ng": "ng",
-    "start" : "node server.mjs",
+    "start" : "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
